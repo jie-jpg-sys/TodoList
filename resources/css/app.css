@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+.todo-card {
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0, 5);
+    transition: box-shadow 0.3s;
+}
+
+.todo-header {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.todo-container {
+    overflow: hidden;
+    width: 500px;
+    height: 250px;
+    border-radius: 42px;
+    margin: 0 auto;
+    margin-top: -70px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0, 5);
+    transition: box-shadow 0.3s;
+}
+
+.todo-container:hover {
+    box-shadow: 0 10px 25px rgba(161, 196, 253, 0.4);
+}
+
+.todo-form {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #ffffff;
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(35deg,
+            #ffffff 0%,
+            #6f637e 40%,
+            #7f7ece 85%,
+            #6e68ae 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: -3;
+}
+
+.todo-form:hover::before {
+    opacity: 1;
+}
+
+.todo-form:hover {
+    transform: translateY(0px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+input {
+    display: flex;
+    width: 300px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #0062cc;
+    transition: transform 0.5s;
+    transform: translateY(-2px);
+}
+
+textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea:focus {
+    border: 1px solid #0062cc;
+    transition: transform 0.5s;
+    transform: translateY(-2px);
+}
+
+button {
+    margin-top: 20px;
+    padding: 9px;
+    border: none;
+    border-radius: 50px;
+    background-color: #0062cc;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 300px;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #007bff, #28a745, #dc3545);
+    transition: transform 0.4s ease;
+}
+
+.list-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#completed {
+    background-color: #28a745;
+    width: 100px;
+}
+
+tr td.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#delete {
+    background-color: #dc3545;
+    width: 100px;
+}
